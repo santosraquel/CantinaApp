@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class Tela3Activity extends AppCompatActivity {
 //salgado
     private  Button salgadoMais;
@@ -30,11 +32,14 @@ public class Tela3Activity extends AppCompatActivity {
     private int a;
     private TextView preco;
     private double total;
+    private DecimalFormat df;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela3);
+
+        df = new DecimalFormat("#0.00");
 
         //Padrão em todos
         preco= (TextView) findViewById(R.id.preco);
@@ -58,7 +63,7 @@ public class Tela3Activity extends AppCompatActivity {
                 double valorS= 0.0;
                         valorS= a*valorSalgado;
 
-                preco.setText(""+ valorS);
+                preco.setText(""+ df.format(valorS));
 
 
             }
