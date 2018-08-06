@@ -29,6 +29,7 @@ public class Tela3Activity extends AppCompatActivity {
 
     private int a;
     private TextView preco;
+    private double total;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,7 +124,7 @@ public class Tela3Activity extends AppCompatActivity {
         maisBolo = (Button) findViewById(R.id.maisBolo);
          menosBolo= (Button) findViewById(R.id.menosBolo);
         qtdBolo = (TextView) findViewById(R.id.qtdBolo);
-        valorBolo=2.00;
+        valorBolo= 2.00;
 
 
         maisBolo.setOnClickListener(new View.OnClickListener() {
@@ -135,7 +136,7 @@ public class Tela3Activity extends AppCompatActivity {
                 qtdBolo.setText(""+a);
 
                 double valorB= 0.0;
-                valorB= a*valorRefri;
+                valorB= a*valorBolo;
 
                 preco.setText(""+ valorB);
 
@@ -150,13 +151,15 @@ public class Tela3Activity extends AppCompatActivity {
                 qtdBolo.setText(""+a);
 
                 double valorB= 0.0;
-                valorB= a*valorRefri;
+                valorB= a*valorBolo;
 
                 preco.setText(""+ valorB);
             }
         });
 
 
+        //    total= (qtdSalgado + qtdRefri + qtdBolo;
+         //    preco.setText(""+ total);
 
     }
             }
