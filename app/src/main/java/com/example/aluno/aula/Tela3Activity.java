@@ -80,7 +80,7 @@ public class Tela3Activity extends AppCompatActivity {
                 double valorS= 0.0;
                 valorS= a*valorSalgado;
 
-                preco.setText(""+ valorS);
+                preco.setText(""+ df.format(valorS));
 
             }
         });
@@ -103,7 +103,7 @@ public class Tela3Activity extends AppCompatActivity {
                 double valorR= 0.0;
                 valorR= a*valorRefri;
 
-                preco.setText(""+ valorR);
+                preco.setText(""+ df.format(valorR));
 
             }
         });
@@ -119,7 +119,7 @@ public class Tela3Activity extends AppCompatActivity {
                 double valorR= 0.0;
                 valorR= a*valorRefri;
 
-                preco.setText(""+ valorR);
+                preco.setText(""+ df.format(valorR));
 
             }
         });
@@ -143,7 +143,7 @@ public class Tela3Activity extends AppCompatActivity {
                 double valorB= 0.0;
                 valorB= a*valorBolo;
 
-                preco.setText(""+ valorB);
+                preco.setText(""+ df.format(valorB));
 
             }
         });
@@ -158,13 +158,15 @@ public class Tela3Activity extends AppCompatActivity {
                 double valorB= 0.0;
                 valorB= a*valorBolo;
 
-                preco.setText(""+ valorB);
+                preco.setText(""+ df.format(valorB));
             }
         });
 
 
-        //    total= (qtdSalgado + qtdRefri + qtdBolo;
-         //    preco.setText(""+ total);
+        //total =0.0;
+
+       // total= qtdSalgado + qtdRefri + qtdBolo;
+         //   preco.setText(""+ df.format(total));
 
     }
             }
