@@ -14,22 +14,28 @@ public class Tela3Activity extends AppCompatActivity {
     private  Button salgadoMais;
     private Button salgadoMenos;
     private TextView qtdSalgado;
-    private double valorSalgado;
+    private double valorSalgado = 3.80;
+    int salgados = 0;
 //refri
     private Button refriMais;
     private Button menosRefri;
     private TextView qtdRefri;
-    private double valorRefri;
+    private double valorRefri = 1.50;
+    int refris = 0;
 
     //Bolo
     private Button maisBolo;
     private Button menosBolo;
     private TextView qtdBolo;
-    private double valorBolo;
+    private double valorBolo = 2.00;
+    int bolos = 0;
+
+
+    private Button botaoCalcular;
 
 
 
-    private int a;
+
     private TextView preco;
     private double total;
     private DecimalFormat df;
@@ -43,7 +49,7 @@ public class Tela3Activity extends AppCompatActivity {
 
         //Padrão em todos
         preco= (TextView) findViewById(R.id.preco);
-        a=0;
+
 
 
         //Salgado
@@ -57,13 +63,9 @@ public class Tela3Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                   a= a+1;
-                qtdSalgado.setText(""+a);
-
-                double valorS= 0.0;
-                        valorS= a*valorSalgado;
-
-                preco.setText(""+ df.format(valorS));
+                   salgados= salgados+1;
+                qtdSalgado.setText(""+salgados);
+                calcularTotal();
 
 
             }
@@ -73,14 +75,12 @@ public class Tela3Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                 a= a-1;
+                 salgados = salgados-1;
 
-                qtdSalgado.setText(""+a);
+                qtdSalgado.setText(""+salgados);
 
-                double valorS= 0.0;
-                valorS= a*valorSalgado;
+                calcularTotal();
 
-                preco.setText(""+ df.format(valorS));
 
             }
         });
@@ -96,14 +96,13 @@ public class Tela3Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                a= a+1;
+                refris= refris+1;
 
-                qtdRefri.setText(""+a);
 
-                double valorR= 0.0;
-                valorR= a*valorRefri;
+                qtdRefri.setText(""+refris);
 
-                preco.setText(""+ df.format(valorR));
+                calcularTotal();
+
 
             }
         });
@@ -112,14 +111,12 @@ public class Tela3Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                a= a-1;
+                refris= refris-1;
 
-                qtdRefri.setText(""+a);
+                qtdRefri.setText(""+refris);
 
-                double valorR= 0.0;
-                valorR= a*valorRefri;
+                calcularTotal();
 
-                preco.setText(""+ df.format(valorR));
 
             }
         });
@@ -129,21 +126,18 @@ public class Tela3Activity extends AppCompatActivity {
         maisBolo = (Button) findViewById(R.id.maisBolo);
          menosBolo= (Button) findViewById(R.id.menosBolo);
         qtdBolo = (TextView) findViewById(R.id.qtdBolo);
-        valorBolo= 2.00;
+
 
 
         maisBolo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                a= a+1;
+                bolos = bolos+1;
 
-                qtdBolo.setText(""+a);
+                qtdBolo.setText(""+bolos);
 
-                double valorB= 0.0;
-                valorB= a*valorBolo;
-
-                preco.setText(""+ df.format(valorB));
+                calcularTotal();
 
             }
         });
@@ -151,22 +145,32 @@ public class Tela3Activity extends AppCompatActivity {
         menosBolo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                a= a-1;
+                bolos= bolos-1;
 
-                qtdBolo.setText(""+a);
+                qtdBolo.setText(""+bolos);
 
-                double valorB= 0.0;
-                valorB= a*valorBolo;
+                calcularTotal();
 
-                preco.setText(""+ df.format(valorB));
             }
         });
 
 
-        //total =0.0;
+    }
 
-       // total= qtdSalgado + qtdRefri + qtdBolo;
-         //   preco.setText(""+ df.format(total));
+    public void calcularTotal(){
+
+        double valor = 0;
+        valor = ((bolos*valorBolo) + (refris*valorRefri) + (salgados*valorSalgado)) ;
+
+        preco.setText(""+ df.format(valor));
 
     }
-            }
+
+        botaoCalcular.OnClickListener(new Button)
+        @Override
+        public void onClick(View v) {
+
+        }
+
+
+}
